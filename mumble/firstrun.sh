@@ -7,6 +7,7 @@ if [ -f /config/mumble-server.ini ]; then
   ln -s /config/mumble-server.ini /etc/mumble-server.ini
 else
   echo "Using default config file."
-  ln -s /etc/mumble-server.ini /config/mumble-server.ini
+  mv /etc/mumble-server.ini /config/mumble-server.ini
+  ln -s /config/mumble-server.ini /etc/mumble-server.ini
   chown nobody:users /config/mumble-server.ini
 fi
