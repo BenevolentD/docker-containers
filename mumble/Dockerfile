@@ -39,7 +39,7 @@ VOLUME /config
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
 
-# Add ddclient to runit
-#RUN mkdir /etc/service/ddclient
-#ADD ddclient.sh /etc/service/ddclient/run
-#RUN chmod +x /etc/service/ddclient/run
+# Add mumble to runit
+RUN mkdir /etc/service/mumble
+ADD mumble.sh /etc/service/mumble/run
+RUN chmod +x /etc/service/mumble/run

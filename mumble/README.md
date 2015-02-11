@@ -1,7 +1,7 @@
 docker-mumble
 ==================
 
-This is a Dockerfile setup for Mumble. Client for low latency VoIP chat.
+This is a Dockerfile setup for Mumble specifically geared toward unraid.
 
 Edit /config/mumble-server.ini
 
