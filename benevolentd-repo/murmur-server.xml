@@ -6,7 +6,7 @@
     [b][span style='color: #E80000;']Directions:[/span][/b][br]
     [b]/config[/b] : Mumble will store it's configuration files here.
    </Description>
-  <Registry>https://registry.hub.docker.com/benevolentd/docker-mumble/</Registry>
+  <Registry>https://registry.hub.docker.com/brentwood/docker-mumble/</Registry>
   <GitHub>https://github.com/benevolentd/docker-containers/tree/master/mumble/</GitHub>
   <Repository>benevolentd/docker-mumble</Repository>
   <BindTime>true</BindTime>
