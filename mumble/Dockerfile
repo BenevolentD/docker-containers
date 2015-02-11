@@ -30,8 +30,7 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   
 # Expose Ports
-EXPOSE 64738
-EXPOSE 64738/udp
+EXPOSE 64738/tcp 64738/udp
 
 # Expose Volumes
 VOLUME /config
