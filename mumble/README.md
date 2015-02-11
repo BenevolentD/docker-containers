@@ -1,11 +1,9 @@
-docker-ddclient
+docker-mumble
 ==================
 
-This is a Dockerfile setup for DDClient. Client to update DynDNS service.
+This is a Dockerfile setup for Mumble. Client for low latency VoIP chat.
 
-Conf file Config Tool: https://account.dyn.com/tools/clientconfig.html
-
-Edit /config/ddclient.conf
+Edit /config/mumble-server.ini
 
 
-    docker run -d --name="DDClient" --net="host" -v "/path/to/config":"/config":rw smdion/docker-ddclient
+    docker run -d --name="Mumble" --net="host" -v "/path/to/config":"/config":rw benevolentd/docker-mumble
