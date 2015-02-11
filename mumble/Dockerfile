@@ -27,7 +27,7 @@ RUN \
   apt-get update -q && \
   apt-get install -qy mumble-server && \
   apt-get clean -y && \
-  rm -rf /var/lib/apt/lists/* && \
+  rm -rf /var/lib/apt/lists/*
   
 # Expose Ports
 EXPOSE 64738/tcp 64738/udp
