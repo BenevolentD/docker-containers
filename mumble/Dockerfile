@@ -28,7 +28,6 @@ RUN \
   apt-get install -qy mumble-server && \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/* && \
-  ln -s /config/mumble-server.ini /etc/mumble-server.ini
   
 # Expose Ports
 EXPOSE 64738
