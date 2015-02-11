@@ -1,5 +1,5 @@
 FROM phusion/baseimage:0.9.15
-MAINTAINER smdion <me@seandion.com>
+MAINTAINER benevolentd
 
 # Set correct environment variables
 ENV HOME /root
