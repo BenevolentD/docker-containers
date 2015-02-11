@@ -21,7 +21,7 @@ CMD ["/sbin/my_init"]
 # Disable SSH
 RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 
-# Install ddclient
+# Install mumble
 RUN \
   add-apt-repository ppa:mumble/release && \
   apt-get update -q && \
@@ -29,6 +29,10 @@ RUN \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/* && \
   ln -s /config/mumble-server.ini /etc/mumble-server.ini
+  
+# Expose Ports
+EXPOSE 64738
+EXPOSE 64738/udp
 
 # Expose Volumes
 VOLUME /config
@@ -37,12 +41,7 @@ VOLUME /config
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
 
-# Add inotify.sh to execute during container startup
-RUN mkdir /etc/service/inotify
-ADD inotify.sh /etc/service/inotify/run
-RUN chmod +x /etc/service/inotify/run
-
 # Add ddclient to runit
-RUN mkdir /etc/service/ddclient
-ADD ddclient.sh /etc/service/ddclient/run
-RUN chmod +x /etc/service/ddclient/run
+#RUN mkdir /etc/service/ddclient
+#ADD ddclient.sh /etc/service/ddclient/run
+#RUN chmod +x /etc/service/ddclient/run
