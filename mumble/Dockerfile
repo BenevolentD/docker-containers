@@ -27,8 +27,8 @@ RUN \
   apt-get update -q && \
   apt-get install -qy mumble-server && \
   apt-get clean -y && \
-  rm -rf /var/lib/apt/lists/* && \
-  sed -r 's/(#uname|uname)=.*$/uname=nobody/' /etc/mumble-server.ini
+  rm -rf /var/lib/apt/lists/*
+#  sed -r 's/(#uname|uname)=.*$/uname=nobody/' /etc/mumble-server.ini
   
 # Expose Ports
 EXPOSE 64738/tcp 64738/udp
@@ -41,6 +41,6 @@ ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
 
 # Add mumble to runit
-RUN mkdir /etc/service/mumble
-ADD mumble.sh /etc/service/mumble/run
-RUN chmod +x /etc/service/mumble/run
+#RUN mkdir /etc/service/mumble
+#ADD mumble.sh /etc/service/mumble/run
+#RUN chmod +x /etc/service/mumble/run
