@@ -12,6 +12,7 @@ RUN \
 	g++ \
 	gcc \
 	php-dev \
+	curl \
 	make && \
 	curl https://kent.dl.sourceforge.net/project/esniper/esniper/2.33.0/esniper-2-33-0.tgz -o /tmp/esniper.tgz && \
 	cd /tmp && tar zxf /tmp/esniper.tgz && cd /tmp/esniper-2-33-0; ./configure; make; make install && \
