@@ -43,6 +43,7 @@ RUN \
 
 WORKDIR /root/
 ADD novnc /root/novnc/
+RUN chmod +x /root/novnc/utils/launch.sh
 
 # Expose Port
 EXPOSE 8080
