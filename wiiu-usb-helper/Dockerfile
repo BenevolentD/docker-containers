@@ -37,7 +37,7 @@ RUN \
  cd /usr/bin/ && \
  wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks && \
  chmod +x winetricks && \
- sh winetricks win7 msxml3 dotnet45 vcrun2010 && \
+ sh winetricks -q win7 msxml3 dotnet45 vcrun2010 && \
  mkdir /root/wiiuusbhelper
 
 
