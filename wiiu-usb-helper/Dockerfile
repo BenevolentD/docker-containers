@@ -1,5 +1,5 @@
 FROM phusion/baseimage
-MAINTAINER rix1337
+MAINTAINER brentwood
 
 # Set correct environment variables
 ENV HOME /root
@@ -15,7 +15,7 @@ ENV LANGUAGE en_US.UTF-8
  usermod -d /config nobody && \
  chown -R nobody:users /home
 
-RUN apt-get update &&  apt-get -y install xvfb x11vnc xdotool wget supervisor cabextract websockify net-tools
+RUN apt-get update &&  apt-get -y install xvfb x11vnc xdotool wget supervisor cabextract websockify net-tools winbind
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD usbhelper.sh /root/usbhelper.sh
 RUN chmod +x /root/usbhelper.sh
@@ -31,7 +31,7 @@ RUN \
  apt-key add Release.key && \
  apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/ && \
  apt-get update && \
- apt-get -y install --install-recommends winehq-stable
+ apt-get -y install --install-recommends winehq-devel
 
 RUN \
  cd /usr/bin/ && \
