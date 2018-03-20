@@ -44,7 +44,6 @@ RUN \
 
 WORKDIR /root/
 ADD novnc /root/novnc/
-add wiiuusbhelper /root/wiiuusbhelper/
 
 # Expose Port
 EXPOSE 8080
