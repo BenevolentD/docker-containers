@@ -12,6 +12,6 @@ RUN apk --no-cache add alpine-base pwgen xvfb wine linux-pam wget ca-certificate
     adduser -D -s /bin/bash winer
 USER winer
 COPY rootfs/ /
-RUN WINEPREFIX=/WiiUUSBHelper WINEARCH=win32 winetricks win7 msxml3 dotnet45 vcrun2010
+RUN winetricks win7 msxml3 dotnet45 vcrun2010
 EXPOSE 5900/tcp
 ENTRYPOINT "./entrypoint.sh"
