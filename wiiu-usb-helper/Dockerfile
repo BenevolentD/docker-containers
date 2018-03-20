@@ -7,7 +7,7 @@ RUN apk --no-cache add alpine-base pwgen xvfb wine linux-pam wget ca-certificate
     apk add glibc-bin-2.27-r0.apk glibc-2.27-r0.apk && \
     #/usr/glibc-compat/sbin/ldconfig /lib /usr/glibc-compat/lib && \
     #rm -rf /var/cache/apk/* && \
-    wget -o --no-check-certificate tigervnc-1.8.0.x86_64.tar.gz https://bintray.com/tigervnc/stable/download_file?file_path=tigervnc-1.8.0.x86_64.tar.gz && tar zxf tigervnc-1.8.0.x86_64.tar.gz ./usr -C / && rm tigervnc-1.8.0.x86_64.tar.gz && \
+    wget --no-check-certificate https://bintray.com/artifact/download/tigervnc/stable/tigervnc-1.8.0.x86_64.tar.gz && tar zxf tigervnc-1.8.0.x86_64.tar.gz ./usr -C / && rm tigervnc-1.8.0.x86_64.tar.gz && \
     wget --no-check-certificate http://winetricks.org/winetricks && chmod +x winetricks && mv winetricks /usr/bin/winetricks && \
     adduser -D -s /bin/bash nobody
 USER nobody
