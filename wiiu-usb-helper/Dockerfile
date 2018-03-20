@@ -9,8 +9,8 @@ RUN apk --no-cache add alpine-base pwgen xvfb wine linux-pam wget ca-certificate
     #rm -rf /var/cache/apk/* && \
     wget --no-check-certificate https://bintray.com/artifact/download/tigervnc/stable/tigervnc-1.8.0.x86_64.tar.gz && tar zxf tigervnc-1.8.0.x86_64.tar.gz tigervnc-1.8.0.x86_64/usr -C / && rm tigervnc-1.8.0.x86_64.tar.gz && \
     wget --no-check-certificate http://winetricks.org/winetricks && chmod +x winetricks && mv winetricks /usr/bin/winetricks && \
-    adduser -D -s /bin/bash nobody
-USER nobody
+    adduser -D -s /bin/bash winer
+USER winer
 COPY rootfs/ /
 RUN WINEPREFIX=/WiiUUSBHelper WINEARCH=win32 winetricks win7 msxml3 dotnet45 vcrun2010
 EXPOSE 5900/tcp
