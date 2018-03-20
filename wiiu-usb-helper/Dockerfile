@@ -15,7 +15,7 @@ ENV LANGUAGE en_US.UTF-8
  usermod -d /config nobody && \
  chown -R nobody:users /home
 
-RUN apt-get update &&  apt-get -y install xvfb x11vnc xdotool wget supervisor cabextract websockify net-tools
+RUN apt-get update &&  apt-get -y install xvfb x11vnc xdotool wget supervisor
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD usbhelper.sh /root/usbhelper.sh
 RUN chmod +x /root/usbhelper.sh
@@ -37,7 +37,7 @@ RUN \
  cd /usr/bin/ && \
  wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks && \
  chmod +x winetricks && \
- sh winetricks -q win7 msxml3 dotnet45 vcrun2010 && \
+ sh winetricks -q dotnet45 vcrun2010 win7 && \
  mkdir /root/wiiuusbhelper
 
 
@@ -49,3 +49,6 @@ ADD novnc /root/novnc/
 EXPOSE 8080
 
 CMD ["/usr/bin/supervisord"]
+
+
+
