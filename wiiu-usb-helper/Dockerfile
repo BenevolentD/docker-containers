@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER BenevolentD "github.com/BenevolentD"
-RUN ["/sbin/apk.static", "add", "--no-cache", "alpine-base", "pwgen", "xvfb", "wine", "linux-pam", "wget", "ca-certificates"]
-RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub && \
+RUN apk --no-cache add alpine-base pwgen xvfb wine linux-pam wget ca-certificates && \
+    wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub && \
     wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.27-r0/glibc-2.27-r0.apk && \
     apk.static add glibc-2.27-r0.apk && \
 	wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.27-r0/glibc-bin-2.27-r0.apk && \
