@@ -13,5 +13,6 @@ RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/
     adduser -D -s /bin/bash nobody
 USER nobody
 COPY rootfs/ /
-winetricks win7 msxml3 dotnet45 vcrun2010
+RUN winetricks win7 msxml3 dotnet45 vcrun2010
+EXPOSE 5900/tcp
 ENTRYPOINT "./entrypoint.sh"
