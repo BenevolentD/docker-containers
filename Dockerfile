@@ -2,7 +2,7 @@ FROM debian:stretch
 
 # Install dependencies
 RUN apt-get update
-RUN apt-get -y install procps wget
+RUN apt-get -y install procps wget mono
 
 # Clean
 RUN rm -rf /var/lib/apt/lists/*
