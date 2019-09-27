@@ -16,8 +16,7 @@ WORKDIR /opt/screenconnect-installer/
 RUN tar xvf ScreenConnect_Release.tar.gz
 RUN echo -e "\n\n" | ScreenConnect_*_Install/install.sh
 
-# Volume
-VOLUME /opt/
+VOLUME /opt/screenconnect
 
 # Ports
 EXPOSE 8040 8041

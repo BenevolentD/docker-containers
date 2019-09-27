@@ -7,4 +7,5 @@ export MONO_CFG_DIR="$screenconnectPath/App_Runtime/etc"
 export XDG_CONFIG_HOME="$screenconnectPath/App_Runtime/etc"
 export MONO_XMLSERIALIZER_THS=no
 
-mono "$screenconnectPath/Bin/ScreenConnect.Service.exe" startservices 7 12345 10
+
+/etc/init.d/screenconnect restart
