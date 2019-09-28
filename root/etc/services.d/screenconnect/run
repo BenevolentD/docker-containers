@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bash
+
+ exec \
+	s6-setuidgid abc mono /opt/screenconnect/Bin/ScreenConnect.Service.exe \
+	startservices 7 12345 10
